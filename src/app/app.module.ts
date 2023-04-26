@@ -10,11 +10,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSelectModule} from '@angular/material/select';
+import { LogInComponent } from './component/log-in/log-in.component';
+import { ForgotEmailComponent } from './component/forgot-email/forgot-email.component';
+import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent
+    SignUpComponent,
+    LogInComponent,
+    ForgotEmailComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
