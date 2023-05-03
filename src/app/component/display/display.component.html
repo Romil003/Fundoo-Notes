@@ -1,19 +1,19 @@
-<div class="main-container" >
-<div class="cards" *ngFor="let note of noteList">
+<div class="main-container">
+    <div class="cards" *ngFor="let note of noteList">
 
-    <mat-card class="card-container">
-        <div class="titleblock">
-            <div>
-                {{note.title}}
+        <mat-card class="card-container">
+            <div class="titleblock">
+                <div>
+                    {{note.title}}
+                </div>
+                <div>
+                    <img src="../../../assets/create-4.svg">
+                </div>
             </div>
-            <div>
-                <img src="../../../assets/create-4.svg" >
+            <div>{{note.description}}</div>
+            <div class="iconsize">
+                <app-icons></app-icons>
             </div>
-        </div>
-        <div>{{note.description}}</div>
-        <div class="iconsize">
-            <app-icons></app-icons>
-        </div>
-    </mat-card>
-</div>
+        </mat-card>
+    </div>
 </div>
