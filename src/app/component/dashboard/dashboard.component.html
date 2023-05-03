@@ -1,0 +1,67 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar style="background-color: white;" class="example-toolbar">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+        <img src="../../../assets/main-logo.png">
+        <h2 class="example-app-name">Fundoo Notes</h2>
+        <!-- <div>
+        <i src="../../../assets/search_black_24dp.svg"></i>
+        <input type="text" placeholder="search" class="searchbar" >
+        </div> -->
+        <div class="input-icons">
+            <i class="fa fa-search icon">
+            </i>
+            <input class="input-field" type="text" placeholder="Search">
+        </div>
+        <div class="logo-class-1">
+            <img src="../../../assets/logo-1.svg">
+            <img src="../../../assets/logo-2.svg">
+            <img src="../../../assets/logo-3.svg">
+        </div>
+        <div class="logo-class-2">
+            <img src="../../../assets/apps_FILL0_wght400_GRAD0_opsz48.svg" height="24px" width="24px">
+            <img src="../../../assets/account_circle_black_24dp.svg" height="24px" width="24px">
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" style="width: 300px; border: none;"
+            [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+            <mat-nav-list>
+                <a mat-list-item routerLink="." >
+                    <div class="nav-bar-items">
+                        <img src="../../../assets/lightbulb_black_24dp.svg">
+                        <span>Notes</span>
+                    </div>
+                    </a>
+                <a mat-list-item routerLink="." class="nav-bar-items">
+                    <div class="nav-bar-items">
+                        <img src="../../../assets/notifications_black_24dp.svg">
+                        <span>Remainder</span>
+                    </div>
+                    </a>
+                <a mat-list-item routerLink="." class="nav-bar-items">
+                    <div class="nav-bar-items">
+                        <img src="../../../assets/edit_black_24dp.svg">
+                        <span>Edit Label</span>
+                    </div>
+                    </a>
+                <a mat-list-item routerLink="." class="nav-bar-items">
+                    <div class="nav-bar-items">
+                        <img src="../../../assets/archive_black_24dp.svg">
+                        <span>Archive</span>
+                    </div>
+                    </a>
+                <a mat-list-item routerLink="." class="nav-bar-items">
+                    <div class="nav-bar-items">
+                        <img src="../../../assets/delete_forever_black_24dp.svg">
+                        <span>Trash</span>
+                    </div>
+                    </a>
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

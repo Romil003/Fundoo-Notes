@@ -13,6 +13,20 @@ import {MatSelectModule} from '@angular/material/select';
 import { LogInComponent } from './component/log-in/log-in.component';
 import { ForgotEmailComponent } from './component/forgot-email/forgot-email.component';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { GetallnotesComponent } from './component/getallnotes/getallnotes.component';
+import { CreatenotesComponent } from './component/createnotes/createnotes.component';
+import { DisplayComponent } from './component/display/display.component';
+import { IconsComponent } from './component/icons/icons.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -20,12 +34,32 @@ import { ForgotPasswordComponent } from './component/forgot-password/forgot-pass
     SignUpComponent,
     LogInComponent,
     ForgotEmailComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    DashboardComponent,
+    GetallnotesComponent,
+    CreatenotesComponent,
+    DisplayComponent,
+    IconsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,MatFormFieldModule,MatInputModule,MatCheckboxModule,MatButtonModule,MatSelectModule
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+    MatButtonModule,
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

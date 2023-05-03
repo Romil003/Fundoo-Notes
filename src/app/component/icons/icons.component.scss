@@ -1,0 +1,16 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.main-container img {
+    opacity: 0.54;
+}
+
+.img-6 {
+    height: 18px;
+    width: 18px;
+}

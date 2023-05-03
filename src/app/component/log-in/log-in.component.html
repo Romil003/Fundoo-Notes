@@ -1,3 +1,4 @@
+<form [formGroup]=loginForm >
 <div class="main-container">
     <div class="container-1">
         <div>
@@ -19,30 +20,30 @@
         <div class="mini-container-1">
             <mat-form-field appearance="outline"  style="width: 380px;">
                 <mat-label>Email or Phone</mat-label>
-                <input matInput placeholder="Email or Phone">
+                <input matInput type="email" formControlName="email" placeholder="Email or Phone">
             </mat-form-field>
         </div>
         <div class="mini-container-2">
-            <mat-hint><button mat-button color="primary">Forgot email ?</button></mat-hint>
+            <mat-hint><button mat-button color="primary" routerLink="/forgotemail">Forgot email ?</button></mat-hint>
         </div>
         <div class="mini-container-3">
             <mat-form-field appearance="outline" style="width: 380px;">
                 <mat-label>Password</mat-label>
-                <input matInput placeholder="Password">
+                <input matInput type="password" formControlName="password" placeholder="Password">
             </mat-form-field>
         </div>
         <div class="mini-container-4">
-            <mat-hint><button mat-button color="primary">Forgot password ?</button></mat-hint>
+            <mat-hint><button mat-button color="primary" routerLink="/forgotemail">Forgot password ?</button></mat-hint>
         </div>
-        <div>
+        <div class="text-5">
             <p>Not your computer? Use Guest mode to sign in privately.</p>
         </div>
         <div class="mini-container-5">
             <button mat-button color="primary">Learn more</button>
         </div>
         <div class="mini-container-6">
-            <button mat-button color="primary">Create account</button>
-            <button mat-raised-button color="primary">Next</button>
+            <button mat-button color="primary" routerLink="/signup">Create account</button>
+            <button mat-raised-button color="primary" (click)="login()">Next</button>
         </div>
     </div>
     <div class="container-2">
@@ -69,3 +70,4 @@
         </div>
     </div>
 </div>
+</form>

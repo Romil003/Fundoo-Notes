@@ -104,3 +104,134 @@
 
 }
 
+
+@media only screen and (max-width : 768px) {
+    .container-1 {
+        width: 400px;
+        height: 450px;
+    }
+
+    .text-1 {
+        height: 30px;
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .text-2 {
+        height: 20px;
+        font-size: 24px;
+    }
+
+    .text-3 {
+        height: 20px;
+        font-size: 12px;
+    }
+
+    .mini-container-1 {
+        width: 300px;
+    }
+
+    .mini-container-3 {
+        width: 300px;
+    }
+
+    .mini-container-2 {
+        margin-right: 200px;
+    }
+
+    .mini-container-4 {
+        margin-right: 160px;
+        height: 40px;
+    }
+
+    .text-5 {
+        font-size: 12px;
+        margin-left: 15px;
+        text-align: justify;
+    }
+
+    .mini-container-5 {
+        margin-right: 210px;
+    }
+
+    .mini-container-6 {
+        margin-top: 10px;
+        gap: 100px;
+    }
+
+    .container-3 {
+        margin-left: 10px;
+    }
+
+    .small-input-field {
+        transform:translateX(-1.5em) scaleX(0.6) scaleY(0.6);
+    }
+}
+
+@media only screen and (max-width : 600px) {
+    .container-1 {
+        width: 300px;
+        height: 390px;
+    }
+
+    .text-1 {
+        height: 20px;
+        font-size: 14px;
+        margin-top: 30px;
+    }
+
+    .text-2 {
+        height: 18px;
+        font-size: 20px;
+    }
+
+    .text-3 {
+        height: 10px;
+        font-size: 12px;
+    }
+
+    .mini-container-1 {
+        width: 200px;
+    }
+
+    .mini-container-3 {
+        width: 200px;
+    }
+
+    .mini-container-2 {
+        margin-right: 90px;
+    }
+
+    .mini-container-4 {
+        margin-right: 60px;
+        height: 40px;
+    }
+
+    .text-5 {
+        font-size: 10px;
+        margin-left: 0px;
+        text-align:left;
+    }
+
+    .mini-container-5 {
+        margin-right: 110px;
+    }
+
+    .mini-container-6 {
+        
+        gap: 50px;
+    }
+
+    .container-3 {
+        margin-left: -50px;
+    }
+
+    .small-input-field {
+        transform:translateX(-1.2em) scaleX(0.6) scaleY(0.6);
+    }
+
+    .text-4 {
+        font-size: 10px;
+    }
+}
+
