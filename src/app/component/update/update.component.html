@@ -1,0 +1,30 @@
+<mat-card >
+    <mat-card-content>
+        <div class="titlebar">
+            <div >
+                <input type="text" placeholder="Title" [(ngModel)]="title">
+            </div>
+            <div class="iconbar-2" >
+                <img src="../../../assets/create-4.svg" >
+            </div>
+        </div>
+        <div >
+            <input type="text" placeholder="Description" [(ngModel)]="description" class="second-input">
+        </div>
+        <div  class="iconbar-3">
+            <div class="main-container">
+                <img src="../../../assets/icon-1.svg" class="img-6">
+                <img src="../../../assets/icon-2.svg" class="img-6">
+                <img src="../../../assets/icon-3.svg" class="img-6">
+                <img src="../../../assets/icon-4.svg" class="img-6">
+                <img src="../../../assets/icon-5.svg" class="img-6">
+                <img src="../../../assets/icon-6.svg" class="img-6">
+            </div>
+            <div>
+                <button mat-flat-button (click)="onNoClick()">Close</button>
+            </div>
+            
+        </div>
+    </mat-card-content>
+
+</mat-card>

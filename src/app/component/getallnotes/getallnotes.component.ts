@@ -9,7 +9,7 @@ import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.ser
 export class GetallnotesComponent implements OnInit {
 
   noteArray = []
-
+  // isDeleted : any
   constructor(private noteService : NoteserviceService){}
   ngOnInit() {
     this.getAllNotes();
@@ -21,8 +21,8 @@ export class GetallnotesComponent implements OnInit {
       // console.log(result.data.data);
       this.noteArray = result.data.data;
       console.log(this.noteArray);
+      this.noteArray = this.noteArray.filter((note : any) => note.isDeleted == false && note.isArchived == false);
       this.noteArray.reverse();
-      
     })
   }
 

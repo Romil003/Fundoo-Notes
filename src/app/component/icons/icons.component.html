@@ -1,10 +1,27 @@
 <div class="main-container">
-    <img src="../../../assets/icon-1.svg" class="img-6">
-    <img src="../../../assets/icon-2.svg" class="img-6">
-    <img src="../../../assets/icon-3.svg" class="img-6">
-    <img src="../../../assets/icon-4.svg" class="img-6">
-    <img src="../../../assets/icon-5.svg" class="img-6">
-    <img src="../../../assets/icon-6.svg" class="img-6">
+    <div>
+        <img src="../../../assets/icon-1.svg" class="img-6">
+    </div>
+    <div>
+        <img src="../../../assets/icon-2.svg" class="img-6">
+    </div>
+    <div>
+        <img src="../../../assets/icon-3.svg" class="img-6">
+    </div>
+    <div>
+        <img src="../../../assets/icon-4.svg" class="img-6">
+    </div>
+    <div>
+        <img src="../../../assets/icon-5.svg" class="img-6">
+    </div>
+    <div>
+        <img src="../../../assets/icon-6.svg" class="img-6" [matMenuTriggerFor]="menu">
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="deleteNote()">Delete</button>
+            <button mat-menu-item (click)="archiveNote()">Archive</button>
+          </mat-menu>
+    </div>
+
     <!-- <img src="../../../assets/icon-7.svg">
     <img src="../../../assets/icon-7.svg" class="img-8"> -->
 </div>

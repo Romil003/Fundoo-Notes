@@ -18,4 +18,5 @@ export class HttpService {
     console.log("Getting data from database =>");
     return this.httpClient.get(this.BaseUrl+url,token && httpAuthOptions);
   }
+
 }

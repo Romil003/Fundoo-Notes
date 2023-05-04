@@ -1,18 +1,20 @@
 <div class="main-container">
-    <div class="cards" *ngFor="let note of noteList">
+    <div class="cards" *ngFor="let note of noteList" >
 
-        <mat-card class="card-container">
-            <div class="titleblock">
-                <div>
-                    {{note.title}}
+        <mat-card class="card-container" >
+
+                <div class="titleblock" (click)="openDialog(note)">
+                    <div class="main-title" >
+                        {{note.title}}
+                    </div>
+                    <div>
+                        <img src="../../../assets/create-4.svg">
+                    </div>
                 </div>
-                <div>
-                    <img src="../../../assets/create-4.svg">
-                </div>
-            </div>
-            <div>{{note.description}}</div>
+                <div class="main-description" (click)="openDialog(note)">{{note.description}}</div>
+            
             <div class="iconsize">
-                <app-icons></app-icons>
+                <app-icons [note1]="note" ></app-icons>
             </div>
         </mat-card>
     </div>

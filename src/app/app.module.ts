@@ -27,6 +27,12 @@ import { CreatenotesComponent } from './component/createnotes/createnotes.compon
 import { DisplayComponent } from './component/display/display.component';
 import { IconsComponent } from './component/icons/icons.component';
 import {MatCardModule} from '@angular/material/card';
+import { MatDialogModule, MatDialogRef} from '@angular/material/dialog';
+import { UpdateComponent } from './component/update/update.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { TrashComponent } from './component/trash/trash.component';
+import { ArchiveComponent } from './component/archive/archive.component';
+
 
 @NgModule({
   declarations: [
@@ -39,7 +45,11 @@ import {MatCardModule} from '@angular/material/card';
     GetallnotesComponent,
     CreatenotesComponent,
     DisplayComponent,
-    IconsComponent
+    IconsComponent,
+    UpdateComponent,
+    TrashComponent,
+    ArchiveComponent,
+ 
   ],
   imports: [
     BrowserModule,
@@ -59,7 +69,9 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     MatIconModule,
     MatTooltipModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

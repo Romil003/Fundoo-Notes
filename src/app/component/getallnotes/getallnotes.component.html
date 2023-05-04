@@ -1,2 +1,2 @@
 <app-createnotes (newNote)="sendData()"></app-createnotes>
-<app-display [noteList]="noteArray"></app-display>
+<app-display [noteList]="noteArray" (noteEdit)="sendData()"></app-display>
