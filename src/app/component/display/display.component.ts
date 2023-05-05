@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { MatDialog,MatDialogRef } from '@angular/material/dialog';
 import { UpdateComponent } from '../update/update.component';
 import { GetallnotesComponent } from '../getallnotes/getallnotes.component';
+import { IconsComponent } from '../icons/icons.component';
+import { DataService } from 'src/app/Services/DataService/data.service';
 
 
 @Component({
@@ -9,14 +11,19 @@ import { GetallnotesComponent } from '../getallnotes/getallnotes.component';
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.scss']
 })
-export class DisplayComponent {
+export class DisplayComponent implements OnInit {
   @Output() noteEdit = new EventEmitter<any>()
 @Input() noteList : any
 
 title : any
 description : any
 
-constructor(public dialog: MatDialog) {}
+currentValue : any
+constructor(public dialog: MatDialog , public dataService : DataService) {}
+
+  ngOnInit(){
+    this.showSearchValue();
+  }
 
 openDialog(note : any): void {
   const dialogRef = this.dialog.open(UpdateComponent, {
@@ -29,8 +36,17 @@ openDialog(note : any): void {
     this.noteEdit.emit(result);
     
   });
-
-
 }
+
+refreshPage(){
+  this.noteEdit.emit();
+}
+
+showSearchValue(){
+  this.dataService.currentMessage.subscribe((result )=>{
+    this.currentValue = result;
+  })
+}
+
 
 }

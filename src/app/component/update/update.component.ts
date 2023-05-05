@@ -38,7 +38,4 @@ export class UpdateComponent {
     // this.getNotes.getAllNotes();
   }
 
-  repopulateData(){
-
-  }
 }

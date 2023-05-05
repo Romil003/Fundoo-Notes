@@ -24,6 +24,10 @@ export class TrashComponent implements OnInit {
   })
  }
 
+ showingTrashNotes(){
+  this.displayTrashNotes();
+ }
+
    
 
 

@@ -1,27 +1,39 @@
-<div class="main-container">
+<div class="main-container" *ngIf="display">
     <div>
-        <img src="../../../assets/icon-1.svg" class="img-6">
+        <img src="../../../assets/icon-1.svg" class="img-6" matTooltip="Remind me">
     </div>
     <div>
-        <img src="../../../assets/icon-2.svg" class="img-6">
+        <img src="../../../assets/icon-2.svg" class="img-6" matTooltip="Collaborator">
     </div>
     <div>
-        <img src="../../../assets/icon-3.svg" class="img-6">
+        <img src="../../../assets/icon-3.svg" class="img-6" matTooltip="Background option">
     </div>
     <div>
-        <img src="../../../assets/icon-4.svg" class="img-6">
+        <img src="../../../assets/icon-4.svg" class="img-6" matTooltip="Add image">
     </div>
     <div>
-        <img src="../../../assets/icon-5.svg" class="img-6">
+        <img src="../../../assets/icon-5.svg" class="img-6" matTooltip="Archive" (click)="archiveNote()">
     </div>
     <div>
-        <img src="../../../assets/icon-6.svg" class="img-6" [matMenuTriggerFor]="menu">
+        <img src="../../../assets/icon-6.svg" class="img-6" [matMenuTriggerFor]="menu" matTooltip="More">
         <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="deleteNote()">Delete</button>
-            <button mat-menu-item (click)="archiveNote()">Archive</button>
+            <button mat-menu-item (click)="deleteNote()">Delete note</button>
+            <button mat-menu-item >Add label</button>
+            <button mat-menu-item >Add drawing</button>
+            <button mat-menu-item >Make a copy</button>
+            <button mat-menu-item >Show checkboxes</button>
+            <button mat-menu-item >Copy to Google Docs</button>
           </mat-menu>
     </div>
 
     <!-- <img src="../../../assets/icon-7.svg">
     <img src="../../../assets/icon-7.svg" class="img-8"> -->
+</div>
+<div class="main-container" *ngIf="!display">
+    <div>
+        <img src="../../../assets/delete_forever_black_24dp.svg" class="img-6" matTooltip="Delete forever" (click)="permanentDelete()">
+    </div>
+    <div>
+        <img src="../../../assets/restore_from_trash_black_24dp.svg" class="img-6" matTooltip="Restore">
+    </div>
 </div>

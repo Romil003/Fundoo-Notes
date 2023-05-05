@@ -32,6 +32,7 @@ import { UpdateComponent } from './component/update/update.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { TrashComponent } from './component/trash/trash.component';
 import { ArchiveComponent } from './component/archive/archive.component';
+import { SearchPipe } from './Pipe/search/search.pipe';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ArchiveComponent } from './component/archive/archive.component';
     UpdateComponent,
     TrashComponent,
     ArchiveComponent,
+    SearchPipe
  
   ],
   imports: [

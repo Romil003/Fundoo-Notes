@@ -23,4 +23,8 @@ export class ArchiveComponent implements OnInit {
     })
   }
 
+  showingArchiveNotesRefresh(){
+    this.displayArchiveNotes();
+  }
+
 }

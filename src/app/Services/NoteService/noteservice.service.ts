@@ -81,4 +81,12 @@ getArchiveNotesList(){
   return this.httpservice.getService('notes/getArchiveNotesList',true,this.httpOption);
 }
 
+permanentDeleteNote(reqData : any){
+  return this.httpservice.postService('notes/deleteForeverNotes',reqData,true,this.httpOption);
+}
+
+restoreNoteFromTrash(){
+  
+}
+
 }

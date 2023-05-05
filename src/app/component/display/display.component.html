@@ -1,5 +1,5 @@
 <div class="main-container">
-    <div class="cards" *ngFor="let note of noteList" >
+    <div class="cards" *ngFor="let note of noteList | search:currentValue" >
 
         <mat-card class="card-container" >
 
@@ -8,13 +8,13 @@
                         {{note.title}}
                     </div>
                     <div>
-                        <img src="../../../assets/create-4.svg">
+                        <img src="../../../assets/create-4.svg" matTooltip="Pin note">
                     </div>
                 </div>
                 <div class="main-description" (click)="openDialog(note)">{{note.description}}</div>
             
             <div class="iconsize">
-                <app-icons [note1]="note" ></app-icons>
+                <app-icons [note1]="note" (repopulatePage)="refreshPage()"   ></app-icons>
             </div>
         </mat-card>
     </div>
