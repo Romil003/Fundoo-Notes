@@ -13,6 +13,7 @@ export class UpdateComponent {
   
   title : any
   description : any
+  colorOfBackground : any
   constructor(
     public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
@@ -20,6 +21,7 @@ export class UpdateComponent {
   ) {
     this.title = data.title
     this.description = data.description
+    this.colorOfBackground = data.color
   }
 
   onNoClick(): void {

@@ -6,13 +6,32 @@
         <img src="../../../assets/icon-2.svg" class="img-6" matTooltip="Collaborator">
     </div>
     <div>
-        <img src="../../../assets/icon-3.svg" class="img-6" matTooltip="Background option">
+        <img src="../../../assets/icon-3.svg" class="img-6" [matMenuTriggerFor]="menu1" matTooltip="Background option">
+        <mat-menu #menu1="matMenu" class="color-menu">
+            <div class="color-menu-1">
+                <button mat-menu-item class="color-12 color-button" (click)="changingBgColor('#fff')"></button>
+                <button mat-menu-item class="color-1 color-button" (click)="changingBgColor('#f28b82')"></button>
+                <button mat-menu-item class="color-2 color-button" (click)="changingBgColor('#fbbc04')"></button>
+                <button mat-menu-item class="color-3 color-button" (click)="changingBgColor('#fff475')"></button>
+                <button mat-menu-item class="color-4 color-button" (click)="changingBgColor('#ccff90')"></button>
+                <button mat-menu-item class="color-5 color-button" (click)="changingBgColor('#a7ffeb')"></button>
+                <button mat-menu-item class="color-6 color-button" (click)="changingBgColor('#cbf0f8')"></button>
+                <button mat-menu-item class="color-7 color-button" (click)="changingBgColor('#aecbfa')"></button>
+                <button mat-menu-item class="color-8 color-button" (click)="changingBgColor('#d7aefb')"></button>
+                <button mat-menu-item class="color-9 color-button" (click)="changingBgColor('#fdcfe8')"></button>
+                <button mat-menu-item class="color-10 color-button" (click)="changingBgColor('#e6c9a8')"></button>
+                <button mat-menu-item class="color-11 color-button" (click)="changingBgColor('#e8eaed')"></button>
+            </div>
+          </mat-menu>
     </div>
     <div>
         <img src="../../../assets/icon-4.svg" class="img-6" matTooltip="Add image">
     </div>
-    <div>
+    <div *ngIf="!showUnarchive">
         <img src="../../../assets/icon-5.svg" class="img-6" matTooltip="Archive" (click)="archiveNote()">
+    </div>
+    <div *ngIf="showUnarchive">
+        <img src="../../../assets/icon-5.svg" class="img-6" matTooltip="Unarchive" (click)="unarchiveNote()">
     </div>
     <div>
         <img src="../../../assets/icon-6.svg" class="img-6" [matMenuTriggerFor]="menu" matTooltip="More">
@@ -34,6 +53,6 @@
         <img src="../../../assets/delete_forever_black_24dp.svg" class="img-6" matTooltip="Delete forever" (click)="permanentDelete()">
     </div>
     <div>
-        <img src="../../../assets/restore_from_trash_black_24dp.svg" class="img-6" matTooltip="Restore">
+        <img src="../../../assets/restore_from_trash_black_24dp.svg" class="img-6" matTooltip="Restore" (click)="restoreNote()">
     </div>
 </div>

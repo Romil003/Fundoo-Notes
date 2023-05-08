@@ -1,7 +1,7 @@
 <div class="main-container">
     <div class="cards" *ngFor="let note of noteList | search:currentValue" >
 
-        <mat-card class="card-container" >
+        <mat-card class="card-container" [style.background-color]="note.color">
 
                 <div class="titleblock" (click)="openDialog(note)">
                     <div class="main-title" >

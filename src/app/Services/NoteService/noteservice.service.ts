@@ -85,8 +85,8 @@ permanentDeleteNote(reqData : any){
   return this.httpservice.postService('notes/deleteForeverNotes',reqData,true,this.httpOption);
 }
 
-restoreNoteFromTrash(){
-  
+changeBackgroundColorOfNote(reqData : any){
+  return this.httpservice.postService('notes/changesColorNotes',reqData,true,this.httpOption);
 }
 
 }
