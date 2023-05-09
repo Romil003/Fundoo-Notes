@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { DataService } from 'src/app/Services/DataService/data.service';
 import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.service';
 
 @Component({
@@ -9,14 +10,17 @@ import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.ser
 })
 export class IconsComponent implements OnInit {
   @Output() repopulatePage = new EventEmitter<any>()
+  @Output() selectedDataEmitter = new EventEmitter<string>();
   @Input() note1 : any
   display : boolean = true
   showUnarchive : boolean = false
 
-  isSelected : boolean = false
-   colorName : any;
-  
-  constructor(private noteService :NoteserviceService){}
+  // isSelected : boolean = false
+
+  colorName : any;
+  isNoteIdPresent : boolean = false
+  noteID : any
+  constructor(private noteService :NoteserviceService,private dataService : DataService){}
 
   ngOnInit(){
     if(this.note1.isDeleted==true){
@@ -32,6 +36,10 @@ export class IconsComponent implements OnInit {
       this.showUnarchive = false;
     }
   }
+
+  // onSelect(){
+  //   this.dataService.selectedColor = this.colorName;
+  // }
 
   deleteNote(){
  
@@ -101,24 +109,36 @@ export class IconsComponent implements OnInit {
     })
   }
 
-  selectingColor() {
-    this.isSelected = true;
+  onColorClick(color : any){
+
+    if(this.note1 == null){
+    this.dataService.selectedColor = color;
+    }
+    else if(this.note1 != null){
+      
+    }
+    //  else {
+    //   this.changingBgColor(color);
+    // } 
+
   }
 
   changingBgColor(color:any){
-  this.colorName = color;
+      this.colorName = color;
 
-  let reqData = {
-    noteIdList:[this.note1.id],
-    color : this.colorName
-  }
+      let reqData = {
+        noteIdList:[this.note1.id],
+        color : this.colorName
+      }
+    
+      this.noteService.changeBackgroundColorOfNote(reqData).subscribe((result) => {
+        console.log("changing color of notes");
+        this.repopulatePage.emit(result);
+      })
+}
 
-  this.noteService.changeBackgroundColorOfNote(reqData).subscribe((result) => {
-    console.log("changing color of notes");
-    this.repopulatePage.emit(result);
-  })
-  
-  }
-
+updateColor(color : any){
+  this.selectedDataEmitter.emit(color);
+}
 
 }

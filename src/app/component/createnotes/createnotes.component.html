@@ -18,7 +18,7 @@
             <input type="text" placeholder="Description" [(ngModel)]="description" class="second-input">
         </div>
         <div *ngIf="show" class="iconbar-3">
-            <div class="main-container">
+            <!-- <div class="main-container">
                 <img src="../../../assets/icon-1.svg" class="img-6">
                 <img src="../../../assets/icon-2.svg" class="img-6">
                 <img src="../../../assets/icon-3.svg" class="img-6">
@@ -27,7 +27,8 @@
                 <img src="../../../assets/icon-6.svg" class="img-6">
                 <img src="../../../assets/icon-7.svg">
                 <img src="../../../assets/icon-7.svg" class="img-8">
-            </div>
+            </div> -->
+            <app-icons class="icon-class"></app-icons>
             <button mat-flat-button *ngIf="show" (click)="addNotes()">Close</button>
         </div>
     </mat-card>

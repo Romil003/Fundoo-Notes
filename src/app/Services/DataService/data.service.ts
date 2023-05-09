@@ -9,6 +9,8 @@ export class DataService {
   private messageSource = new BehaviorSubject([]);
   currentMessage = this.messageSource.asObservable();
 
+  selectedColor : any
+
   constructor() { }
 
   newMessage(message: any) {

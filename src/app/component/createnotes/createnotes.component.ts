@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { DataService } from 'src/app/Services/DataService/data.service';
 import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.service';
 
 @Component({
@@ -6,22 +7,29 @@ import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.ser
   templateUrl: './createnotes.component.html',
   styleUrls: ['./createnotes.component.scss']
 })
-export class CreatenotesComponent {
+export class CreatenotesComponent implements OnInit {
 @Output() newNote = new EventEmitter<any>()
   title : any
   description : any
   show : boolean = false;
 
-  constructor(private noteService : NoteserviceService){}
+  colorSelected : any
+
+  constructor(private noteService : NoteserviceService,private dataService : DataService){}
+  ngOnInit(){
+    
+  }
   showing(){
     this.show = true;
   }
 
   addNotes(){
+    this.colorSelected = this.dataService.selectedColor;
     console.log("adding notes api");
     let reqData = {
       title : this.title,
-      description : this.description
+      description : this.description,
+      color : this.colorSelected
     }
 
     this.noteService.createNote(reqData).subscribe((result) => {
@@ -34,11 +42,4 @@ export class CreatenotesComponent {
     
   }
 
-  // sendData() {
-  //   let reqData = {
-  //     title : this.title,
-  //     description : this.description
-  //   }
-  //   this.newNote.emit(reqData);
-  // }
 }
