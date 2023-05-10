@@ -14,6 +14,8 @@ import { DataService } from 'src/app/Services/DataService/data.service';
 export class DisplayComponent implements OnInit {
   @Output() noteEdit = new EventEmitter<any>()
 @Input() noteList : any
+@Input() isDeleted : any
+@Input() isArchived : any;
 
 title : any
 description : any

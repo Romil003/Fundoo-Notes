@@ -14,7 +14,7 @@
                 <div class="main-description" (click)="openDialog(note)">{{note.description}}</div>
             
             <div class="iconsize">
-                <app-icons [note1]="note" (repopulatePage)="refreshPage()"   ></app-icons>
+                <app-icons [note1]="note" (repopulatePage)="refreshPage()" [isDeleted]="isDeleted" [isArchived]="isArchived"  ></app-icons>
             </div>
         </mat-card>
     </div>

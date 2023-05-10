@@ -29,7 +29,9 @@ export class CreatenotesComponent implements OnInit {
     let reqData = {
       title : this.title,
       description : this.description,
-      color : this.colorSelected
+      color : this.colorSelected,
+      isDeleted : false,
+      isArchived : false
     }
 
     this.noteService.createNote(reqData).subscribe((result) => {

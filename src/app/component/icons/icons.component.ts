@@ -12,6 +12,8 @@ export class IconsComponent implements OnInit {
   @Output() repopulatePage = new EventEmitter<any>()
   @Output() selectedDataEmitter = new EventEmitter<string>();
   @Input() note1 : any
+  @Input() isDeleted : any;
+  @Input() isArchived : any
   display : boolean = true
   showUnarchive : boolean = false
 
@@ -20,17 +22,22 @@ export class IconsComponent implements OnInit {
   colorName : any;
   isNoteIdPresent : boolean = false
   noteID : any
+  isTrashed : boolean = false
+  isOnlyArchived : boolean = false
   constructor(private noteService :NoteserviceService,private dataService : DataService){}
 
   ngOnInit(){
-    if(this.note1.isDeleted==true){
+    this.isTrashed = this.isDeleted
+
+    this.isOnlyArchived = this.isArchived
+    if(this.isDeleted){
       this.display = false;
     }
     else{
       this.display = true;
     }
 
-    if(this.note1.isArchived==true){
+    if(this.isArchived){
       this.showUnarchive = true;
     } else{
       this.showUnarchive = false;
@@ -114,12 +121,12 @@ export class IconsComponent implements OnInit {
     if(this.note1 == null){
     this.dataService.selectedColor = color;
     }
-    else if(this.note1 != null){
-      
-    }
-    //  else {
-    //   this.changingBgColor(color);
-    // } 
+    // else if(this.note1 != null){
+
+    // }
+     else {
+      this.changingBgColor(color);
+    } 
 
   }
 

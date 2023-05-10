@@ -9,10 +9,12 @@ import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.ser
 export class TrashComponent implements OnInit {
 
   trashArray : any;
+  isDeleted : boolean = true
 
   constructor(public noteService : NoteserviceService){}
 
   ngOnInit(): void {
+
     this.displayTrashNotes();
   }
 

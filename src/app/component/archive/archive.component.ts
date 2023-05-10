@@ -9,6 +9,7 @@ import { NoteserviceService } from 'src/app/Services/NoteService/noteservice.ser
 export class ArchiveComponent implements OnInit {
 
   archiveArray : any
+  isArchived : boolean = true;
 
   constructor(public noteService : NoteserviceService){}
 
